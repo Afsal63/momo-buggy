@@ -26,7 +26,7 @@ export default function ReelsPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Our Reels. Our Reach.
           </h1>
-          <p className="text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-800 max-w-xl mx-auto">
             A glimpse into how MomoBuggy attracts attention,
             footfall, and customers every single day.
           </p>
