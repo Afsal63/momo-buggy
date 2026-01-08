@@ -1,115 +1,84 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
-
-const plates = [
-  { id: "steam", name: "Steam Momos", img: "/hero/stem-momo1.png" },
-  { id: "fried", name: "Fried Momos", img: "/hero/fried-momo.png" },
-  { id: "paneer", name: "Paneer Momos", img: "/hero/stem-momo1.png" },
-  { id: "dessert", name: "Dessert", img: "/hero/fried-momo.png" },
-];
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [active, setActive] = useState(plates[0]);
-  const indexRef = useRef(0);
-
-  /* 🔁 AUTO ROTATE (VISIBLE NOW) */
-  useEffect(() => {
-    const interval = setInterval(() => {
-      indexRef.current = (indexRef.current + 1) % plates.length;
-      setActive(plates[indexRef.current]);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="min-h-screen bg-cream flex items-center pt-28">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-center">
-        {/* LEFT CONTENT */}
+    <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-cream">
+      {/* BACKGROUND ELEMENTS */}
+      {/* Gradient Mesh */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-black/5" />
 
+      {/* Glow Orbs */}
+      <motion.div
+        animate={{ y: [0, -20, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-20 -left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl"
+      />
+      <motion.div
+        animate={{ y: [0, 20, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-0 right-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl"
+      />
+
+      {/* Subtle Grid */}
+      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+      {/* CONTENT */}
+      <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 px-6 items-center">
+        {/* LEFT CONTENT */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
           className="text-center md:text-left"
         >
-          {/* MAIN HEADING */}
-          <h1 className="text-[3.2rem] sm:text-[2.2rem] md:text-6xl font-bold mb-4 text-black leading-tight">
-            Every Bite <br />
-            <span className="text-primary">Satisfies 😍</span>
+          <h1 className="text-[2.6rem] sm:text-[3.2rem] md:text-6xl font-bold mb-6 leading-tight text-black">
+            Build a <span className="text-primary">High-Growth</span> <br />
+            Food Franchise Business
           </h1>
 
-          {/* SUB TEXT (FIXED FOR MOBILE) */}
-          <p className=" sm:text-[1.2rem] md:text-[2rem] text-gray-600 max-w-md mx-auto md:mx-0 mb-7 leading-relaxed">
-            Premium street-style momos crafted for taste lovers. Built for
-            scale. Loved everywhere.
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-xl mx-auto md:mx-0 mb-10 leading-relaxed">
+            Join a fast-expanding Indian brand with
+            <strong> 20+ profitable franchises</strong>, a structured model, and
+            strong regional demand.
           </p>
 
-          {/* CTA */}
-          <div className="flex gap-4 mb-8 justify-center md:justify-start flex-wrap">
-            <button className="px-6 py-3 bg-primary text-white rounded-full font-semibold hover:scale-105 transition">
-              Explore Menu
+          <div className="flex gap-4 justify-center md:justify-start flex-wrap">
+            <button className="px-8 py-4 bg-primary text-white rounded-full font-semibold hover:scale-105 transition">
+              Apply for Franchise
             </button>
-            <button className="px-6 py-3 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">
-              Watch Reels
+            <button className="px-8 py-4 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">
+              View Business Model
             </button>
-          </div>
-
-          {/* CATEGORY SELECTOR */}
-          <div className="flex gap-3 flex-wrap justify-center md:justify-start">
-            {plates.map((item, i) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  indexRef.current = i;
-                  setActive(item);
-                }}
-                className={`px-4 py-2 rounded-full text-sm sm:text-base font-medium transition
-          ${
-            active.id === item.id
-              ? "bg-black text-white"
-              : "bg-white text-black hover:bg-primary/10"
-          }`}
-              >
-                {item.name}
-              </button>
-            ))}
           </div>
         </motion.div>
 
-        {/* RIGHT IMAGE */}
-        <div className="relative flex justify-center items-center mt-6 md:mt-0">
-          {/* ROTATING RING (ALREADY OK – JUST MORE NOTICEABLE) */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute w-[300px] h-[300px] md:w-[420px] md:h-[420px] rounded-full border border-primary/30"
-          />
-
-          {/* IMAGE SWITCH */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active.id}
-              initial={{ opacity: 0, scale: 0.88 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.92 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="relative z-10"
-            >
-              <Image
-                src={active.img}
-                alt={active.name}
-                width={380}
-                height={380}
-                className="w-[240px] sm:w-[260px] md:w-[380px] drop-shadow-2xl"
-                priority
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        {/* RIGHT – STATS BLOCK */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10"
+        >
+          <div className="grid grid-cols-2 gap-10 text-center">
+            {[
+              { value: "20+", label: "Active Franchises" },
+              { value: "15+", label: "Locations in Kerala" },
+              { value: "Low", label: "Investment Model" },
+              { value: "High", label: "Growth Potential" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <p className="text-4xl font-bold text-primary">{item.value}</p>
+                <p className="text-sm text-gray-600 mt-2">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
