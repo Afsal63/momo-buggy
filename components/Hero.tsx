@@ -28,22 +28,24 @@ export default function Hero() {
   return (
     <section className="min-h-screen bg-cream flex items-center pt-28">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-center">
-
         {/* LEFT CONTENT */}
+
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center md:text-left"
         >
-          <h1 className="text-3xl  md:text-6xl font-bold mb-5 text-black leading-tight">
+          {/* MAIN HEADING */}
+          <h1 className="text-[3.2rem] sm:text-[2.2rem] md:text-6xl font-bold mb-4 text-black leading-tight">
             Every Bite <br />
             <span className="text-primary">Satisfies 😍</span>
           </h1>
 
-          <p className="text-white max-w-md mx-auto md:mx-0 mb-7 text-sm sm:text-2xl">
-            Premium street-style momos crafted for taste lovers.
-            Built for scale. Loved everywhere.
+          {/* SUB TEXT (FIXED FOR MOBILE) */}
+          <p className="text-[1.2rem] md:text-base text-gray-700 max-w-md mx-auto md:mx-0 mb-7 leading-relaxed">
+            Premium street-style momos crafted for taste lovers. Built for
+            scale. Loved everywhere.
           </p>
 
           {/* CTA */}
@@ -62,15 +64,15 @@ export default function Hero() {
               <button
                 key={item.id}
                 onClick={() => {
-                  indexRef.current = i; // sync auto-rotation
+                  indexRef.current = i;
                   setActive(item);
                 }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition
-                  ${
-                    active.id === item.id
-                      ? "bg-black text-white"
-                      : "bg-white text-black hover:bg-primary/10"
-                  }`}
+                className={`px-4 py-2 rounded-full text-sm sm:text-base font-medium transition
+          ${
+            active.id === item.id
+              ? "bg-black text-white"
+              : "bg-white text-black hover:bg-primary/10"
+          }`}
               >
                 {item.name}
               </button>
@@ -80,7 +82,6 @@ export default function Hero() {
 
         {/* RIGHT IMAGE */}
         <div className="relative flex justify-center items-center mt-6 md:mt-0">
-
           {/* ROTATING RING (ALREADY OK – JUST MORE NOTICEABLE) */}
           <motion.div
             animate={{ rotate: 360 }}

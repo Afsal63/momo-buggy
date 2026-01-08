@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import { Lobster,Story_Script } from "next/font/google";
 
 const lobster = Story_Script({
-  // subsets: ["latin"],
   weight: "400",
 });
 
