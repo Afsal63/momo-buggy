@@ -36,12 +36,12 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-center md:text-left"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-5 text-black leading-tight">
+          <h1 className="text-3xl  md:text-6xl font-bold mb-5 text-black leading-tight">
             Every Bite <br />
             <span className="text-primary">Satisfies 😍</span>
           </h1>
 
-          <p className="text-white max-w-md mx-auto md:mx-0 mb-7 text-sm sm:text-base">
+          <p className="text-white max-w-md mx-auto md:mx-0 mb-7 text-sm sm:text-2xl">
             Premium street-style momos crafted for taste lovers.
             Built for scale. Loved everywhere.
           </p>
