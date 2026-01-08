@@ -1,9 +1,9 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Lobster, Story_Script } from "next/font/google";
+import { Lobster, Shadows_Into_Light } from "next/font/google";
 
-const lobster = Story_Script({
+const lobster = Lobster({
   weight: "400",
 });
 

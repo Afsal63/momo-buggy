@@ -27,7 +27,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo1.png"
+            src="/logo2.png"
             alt="MomoBuggy Logo"
             width={150}
             height={42}

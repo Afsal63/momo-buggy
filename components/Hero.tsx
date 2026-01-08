@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -31,24 +32,74 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="text-center md:text-left"
+          className="relative text-center md:text-left"
         >
-          <h1 className="text-[2.6rem] sm:text-[3.2rem] md:text-6xl font-bold mb-6 leading-tight text-black">
-            Build a <span className="text-primary">High-Growth</span> <br />
-            Food Franchise Business
-          </h1>
+          {/* MOMO CHARACTER – LEFT ONLY */}
+          <motion.div
+            className="absolute left-[-24px] md:left-[-80px] top-[10%]
+               pointer-events-none opacity-15 md:opacity-20 -z-10"
+            animate={{ y: [0, -12, 0] }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Image
+              src="/momo/momo.png"
+              alt="Momo Decoration"
+              width={320}
+              height={320}
+              className="object-contain w-36 md:w-[320px]"
+              priority
+            />
+          </motion.div>
 
-          <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-xl mx-auto md:mx-0 mb-10 leading-relaxed">
+          {/* HEADLINE */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-[2.8rem] sm:text-[3.4rem] md:text-6xl
+               font-extrabold mb-6 leading-tight text-black"
+          >
+            Build a{" "}
+            <span className="relative inline-block">
+              <span
+                className="bg-clip-text 
+         from-primary text-white"
+              >
+                High-Growth
+              </span>
+              <span
+                className="absolute -bottom-1 left-0 w-full
+        h-[3px] bg-primary/30 rounded-full"
+              />
+            </span>
+            <br />
+            Food Franchise Business
+          </motion.h1>
+
+          <p
+            className="text-base sm:text-lg md:text-xl text-gray-700
+                max-w-xl mx-auto md:mx-0 mb-10 leading-relaxed"
+          >
             Join a fast-expanding Indian brand with
-            <strong> 20+ profitable franchises</strong>, a structured model, and
+            <strong> 10+ profitable franchises</strong>, a structured model, and
             strong regional demand.
           </p>
 
           <div className="flex gap-4 justify-center md:justify-start flex-wrap">
-            <button className="px-8 py-4 bg-primary text-white rounded-full font-semibold hover:scale-105 transition">
+            <button
+              className="px-8 py-4 bg-primary text-white rounded-full
+      font-semibold hover:scale-105 transition"
+            >
               Apply for Franchise
             </button>
-            <button className="px-8 py-4 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">
+            <button
+              className="px-8 py-4 border border-primary text-primary
+      rounded-full hover:bg-primary hover:text-white transition"
+            >
               View Business Model
             </button>
           </div>
@@ -63,7 +114,7 @@ export default function Hero() {
         >
           <div className="grid grid-cols-2 gap-10 text-center">
             {[
-              { value: "20+", label: "Active Franchises" },
+              { value: "10+", label: "Active Franchises" },
               { value: "15+", label: "Locations in Kerala" },
               { value: "Low", label: "Investment Model" },
               { value: "High", label: "Growth Potential" },
