@@ -43,7 +43,7 @@ export default function Hero() {
           </h1>
 
           {/* SUB TEXT (FIXED FOR MOBILE) */}
-          <p className="text-[1.2rem] md:text-base text-gray-700 max-w-md mx-auto md:mx-0 mb-7 leading-relaxed">
+          <p className=" sm:text-[1.2rem] md:text-[2rem] text-gray-600 max-w-md mx-auto md:mx-0 mb-7 leading-relaxed">
             Premium street-style momos crafted for taste lovers. Built for
             scale. Loved everywhere.
           </p>
