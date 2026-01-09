@@ -42,7 +42,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.path}
-              className="relative group text-sm uppercase tracking-widest"
+              className="relative group text-sm  tracking-widest"
             >
               {link.name}
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full" />

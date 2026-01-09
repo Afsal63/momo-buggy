@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="text-center md:text-left">
           <div className="flex justify-center md:justify-start mb-4">
             <Image
-              src="/logo1.png"
+              src="/logo2.png"
               alt="MomoBuggy Logo"
               width={140}
               height={40}

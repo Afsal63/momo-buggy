@@ -60,24 +60,36 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-[2.8rem] sm:text-[3.4rem] md:text-6xl
-               font-extrabold mb-6 leading-tight text-black"
+            className="
+    text-[2.8rem] sm:text-[3.4rem] md:text-6xl
+    font-extrabold mb-6 leading-tight
+    text-[#0F172A]
+   
+  "
           >
             Build a{" "}
             <span className="relative inline-block">
               <span
-                className="bg-clip-text 
-         from-primary text-white"
+                className="bg-gradient-to-r from-[#ECFEFF] via-white to-[#E6FFFA]
+                 bg-clip-text text-transparent"
               >
                 High-Growth
               </span>
               <span
                 className="absolute -bottom-1 left-0 w-full
-        h-[3px] bg-primary/30 rounded-full"
+                 h-[3px] bg-white/50 rounded-full"
               />
             </span>
             <br />
-            Food Franchise Business
+            Food Franchise{" "}
+            
+            <span
+                className="bg-gradient-to-r from-[#ECFEFF] via-white to-[#E6FFFA]
+                 bg-clip-text text-transparent"
+              >
+              Business
+            </span>
+            
           </motion.h1>
 
           <p

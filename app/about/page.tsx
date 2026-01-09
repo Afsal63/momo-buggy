@@ -19,7 +19,7 @@ export default function AboutPage() {
             <span className="text-primary">Recognized Brand</span>
           </h1>
 
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[#dcd4d4] max-w-2xl mx-auto">
             The story behind MomoBuggy is not about shortcuts — it’s about
             resilience, belief, and building something meaningful.
           </p>
