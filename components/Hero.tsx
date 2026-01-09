@@ -61,7 +61,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="
-    text-[2.8rem] sm:text-[3.4rem] md:text-6xl
+    text-[3.3rem]  md:text-6xl
     font-extrabold mb-6 leading-tight
     text-[#0F172A]
    
