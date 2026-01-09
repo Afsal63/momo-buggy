@@ -7,7 +7,7 @@ export default function FranchiseCTA() {
       <motion.h2
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="text-5xl font-bold text-white mb-6"
+        className=" text-4xl md:text-5xl font-bold text-white mb-6"
       >
         Own a MomoBuggy Franchise
       </motion.h2>
