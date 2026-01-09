@@ -93,7 +93,7 @@ export default function Hero() {
           </motion.h1>
 
           <p
-            className="text-base sm:text-lg md:text-xl text-gray-700
+            className="text-[12px]  md:text-xl text-gray-700
                 max-w-xl mx-auto md:mx-0 mb-10 leading-relaxed"
           >
             Join a fast-expanding Indian brand with
