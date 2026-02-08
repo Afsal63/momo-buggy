@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
+
 export default function FranchiseCTA() {
   return (
     <section className="bg-primary py-24 text-center">
