@@ -93,7 +93,14 @@ export default function FranchisePage() {
             Apply now to become a franchise partner.
           </p>
 
-          <button className="px-10 text-black py-4 bg-white text-primary rounded-full font-semibold hover:scale-105 transition">
+           <button
+    onClick={() =>
+      window.open(
+        "https://momo-buggy-form.vercel.app/",
+        "_blank",
+        "noopener,noreferrer"
+      )
+    } className="px-10 text-black py-4 bg-white text-primary rounded-full font-semibold hover:scale-105 transition">
             Apply for Franchise
           </button>
         </div>

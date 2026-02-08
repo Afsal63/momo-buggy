@@ -12,7 +12,14 @@ export default function FranchiseCTA() {
         Own a MomoBuggy Franchise
       </motion.h2>
 
-      <button className="mt-6 px-10 py-4 bg-white text-primary font-semibold rounded-full hover:scale-110 transition">
+    <button
+    onClick={() =>
+      window.open(
+        "https://momo-buggy-form.vercel.app/",
+        "_blank",
+        "noopener,noreferrer"
+      )
+    } className="mt-6 px-10 py-4 bg-white text-primary font-semibold rounded-full hover:scale-110 transition">
         Apply Now
       </button>
     </section>
