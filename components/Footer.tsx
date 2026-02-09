@@ -56,9 +56,25 @@ export default function Footer() {
             Franchise & Business Enquiries
           </p>
 
-          <p className="text-sm text-gray-300">📞 +91 9XXXXXXXXX</p>
+       <p className="text-sm text-gray-300">
+  📞{" "}
+  <a
+    href="tel:+918848381118"
+    className="hover:text-white transition"
+  >
+    +91 8848381118
+  </a>
+</p>
 
-          <p className="text-sm text-gray-300 mt-1">✉️ info@momobuggy.com</p>
+<p className="text-sm text-gray-300 mt-1">
+  ✉️{" "}
+  <a
+    href="mailto:momobuggy111@gmail.com"
+    className="hover:text-white transition"
+  >
+    momobuggy111@gmail.com
+  </a>
+</p>
         </div>
 
         {/* SOCIAL ICONS */}
@@ -69,7 +85,7 @@ export default function Footer() {
             {/* WHATSAPP */}
             <motion.a
               whileHover={{ scale: 1.15 }}
-              href="https://wa.me/919XXXXXXXXX"
+              href="https://wa.me/918848381118"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"
