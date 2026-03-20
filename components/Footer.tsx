@@ -56,25 +56,22 @@ export default function Footer() {
             Franchise & Business Enquiries
           </p>
 
-       <p className="text-sm text-gray-300">
-  📞{" "}
-  <a
-    href="tel:+918848381118"
-    className="hover:text-white transition"
-  >
-    +91 8848381118
-  </a>
-</p>
+          <p className="text-sm text-gray-300">
+            📞{" "}
+            <a href="tel:+918848381118" className="hover:text-white transition">
+              +91 8848381118
+            </a>
+          </p>
 
-<p className="text-sm text-gray-300 mt-1">
-  ✉️{" "}
-  <a
-    href="mailto:momobuggy111@gmail.com"
-    className="hover:text-white transition"
-  >
-    momobuggy111@gmail.com
-  </a>
-</p>
+          <p className="text-sm text-gray-300 mt-1">
+            ✉️{" "}
+            <a
+              href="mailto:momobuggy111@gmail.com"
+              className="hover:text-white transition"
+            >
+              momobuggy111@gmail.com
+            </a>
+          </p>
         </div>
 
         {/* SOCIAL ICONS */}

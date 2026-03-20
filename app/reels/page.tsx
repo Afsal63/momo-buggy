@@ -16,10 +16,6 @@ const reels = [
 const INSTAGRAM_PROFILE = "https://www.instagram.com/momobuggy.in/";
 
 export default function ReelsPage() {
-  const openInstagram = () => {
-    window.open(INSTAGRAM_PROFILE, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-[#3AA1A6] via-[#2c7f83] to-[#0f3d40] text-white pt-32 pb-24 px-4 md:px-8 overflow-hidden">
       {/* Ambient Blur */}
@@ -40,8 +36,8 @@ export default function ReelsPage() {
           </h1>
 
           <p className="text-white/80 max-w-2xl mx-auto text-lg">
-            See how MomoBuggy creates buzz, pulls crowds,
-            and converts views into daily footfall.
+            See how MomoBuggy creates buzz, pulls crowds, and converts views
+            into daily footfall.
           </p>
         </motion.div>
 
@@ -55,16 +51,21 @@ export default function ReelsPage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -10 }}
-              onClick={openInstagram}
               className="relative aspect-[9/16] rounded-3xl overflow-hidden cursor-pointer group bg-white/10 backdrop-blur-xl border border-white/10 shadow-xl"
             >
               {/* Image */}
-              <Image
-                src={reel.image}
-                alt={reel.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/momobuggy.in/"
+              >
+                <Image
+                  src={reel.image}
+                  alt={reel.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </a>
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-90" />
@@ -109,7 +110,7 @@ export default function ReelsPage() {
               window.open(
                 "https://momo-buggy-form.vercel.app/",
                 "_blank",
-                "noopener,noreferrer"
+                "noopener,noreferrer",
               )
             }
             className="px-12 py-5 rounded-full bg-black text-white font-bold text-lg shadow-2xl hover:scale-105 hover:bg-white hover:text-black transition-all"

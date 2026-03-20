@@ -1,28 +1,22 @@
-"use client";
-import { motion } from "framer-motion";
-
 
 export default function FranchiseCTA() {
   return (
     <section className="bg-primary py-24 text-center">
-      <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        className=" text-4xl md:text-5xl font-bold text-white mb-6"
-      >
+      
+      {/* Heading (CSS instead of motion) */}
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 opacity-0 animate-fadeIn">
         Own a MomoBuggy Franchise
-      </motion.h2>
+      </h2>
 
-    <button
-    onClick={() =>
-      window.open(
-        "https://momo-buggy-form.vercel.app/",
-        "_blank",
-        "noopener,noreferrer"
-      )
-    } className="mt-6 px-10 py-4 bg-white text-primary font-semibold rounded-full hover:scale-110 transition">
+      {/* CTA Button (anchor instead of window.open) */}
+      <a
+        href="https://momo-buggy-form.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-6 px-10 py-4 bg-white text-primary font-semibold rounded-full transition transform hover:scale-105 active:scale-95 will-change-transform"
+      >
         Apply Now
-      </button>
+      </a>
     </section>
   );
 }
