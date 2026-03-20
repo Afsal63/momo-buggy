@@ -97,7 +97,7 @@ export default function Navbar() {
                 href={link.path}
                 onClick={() => setOpen(false)}
                 className={`text-lg font-medium ${
-                  isActive ? "text-accent" : ""
+                 isActive ? "text-black" : "text-white"
                 }`}
               >
                 {link.name}
